@@ -1,4 +1,4 @@
-import Plant from "./plant";
+import Plant from "./Plant";
 
 export default function Plants({ plants, addCart }) {
   return (

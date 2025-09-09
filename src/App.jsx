@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import Plants from "./components/Plants.jsx";
+import PLANTS from "./data";
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -19,7 +21,25 @@ export default function App() {
     }
   }
 
-  function removeCart(plantToRemove) {}
+  function removeCart(plantToRemove) {
+    const plantExists = cart.find((i) => i.id === plantToRemove.id);
 
-  return <></>;
+    if (plantExists) {
+      setCart(
+        cart
+          .map((item) =>
+            item.id === plantToRemove.id
+              ? { ...item, quantity: item.quantity - 1 }
+              : item
+          )
+          .filter((item) => item.quantity > 0)
+      );
+    }
+  }
+
+  return (
+    <>
+      <Plants plants={PLANTS} addCart={addCart} />
+    </>
+  );
 }
