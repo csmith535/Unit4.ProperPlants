@@ -5,6 +5,7 @@ import PLANTS from "./data";
 
 export default function App() {
   const [cart, setCart] = useState([]);
+  console.log(cart);
 
   function addCart(plant) {
     const plantExists = cart.find((i) => i.id === plant.id);
