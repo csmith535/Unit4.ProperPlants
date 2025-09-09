@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Plants from "./components/Plants.jsx";
 import PLANTS from "./data";
+import CartTotal from "./components/CartTotal.jsx";
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -41,6 +42,7 @@ export default function App() {
   return (
     <>
       <Plants plants={PLANTS} addCart={addCart} />
+      <CartTotal items={cart} addCart={addCart} removeCart={removeCart} />
     </>
   );
 }
