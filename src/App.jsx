@@ -40,9 +40,9 @@ export default function App() {
   }
 
   return (
-    <>
+    <div className="page">
       <Plants plants={PLANTS} addCart={addCart} />
       <CartTotal items={cart} addCart={addCart} removeCart={removeCart} />
-    </>
+    </div>
   );
 }

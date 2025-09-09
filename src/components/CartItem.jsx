@@ -1,9 +1,9 @@
 export default function CartItem({ plant, addCart, removeCart }) {
   return (
-    <div>
-      <h3>
+    <div className="cart-item">
+      <h4>
         {plant.image} {plant.name}
-      </h3>
+      </h4>
       <button onClick={() => addCart(plant)}>+</button>
       <button onClick={() => removeCart(plant)}>-</button>
     </div>
