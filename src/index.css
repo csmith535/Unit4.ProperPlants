@@ -1,24 +1,5 @@
 .page {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-h2 {
-  flex: 1 100%;
-}
-
-.plant-item {
-  border: 0.3em black solid;
-  padding: 0.5em;
-  margin: 1em;
-  justify-content: center;
-  align-items: center;
-}
-
-.cart-item {
-  border: 0.3em black solid;
-  padding: 0.5em;
-  margin: 1em;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 }
