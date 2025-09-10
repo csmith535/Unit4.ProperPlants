@@ -5,28 +5,144 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.p-head {
-  grid-column: 1 / 6;
-  grid-row: 1 / 2;
+.page {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "plants cart";
+  gap: 2rem;
+  min-height: 100vh;
 }
 
-.c-head {
-  grid-column: 6 / 7;
-  grid-row: 1 / 2;
+.header {
+  grid-area: header;
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  margin: 0;
+  color: #2d5a27;
+  font-size: 2.5rem;
+}
+
+.plants-section {
+  grid-area: plants;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  align-content: start;
+}
+
+.cart-section {
+  grid-area: cart;
+  background-color: #f8f9fa;
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.p-head {
+  grid-column: 1 / -1;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .plant-item {
-  border: 0.3em black solid;
-  padding: 0.5em;
-  margin: 1em;
-  justify-content: center;
-  align-items: center;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plant-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.plant-item h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+}
+
+.plant-item p {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+.plant-item button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.plant-item button:hover {
+  background-color: #45a049;
 }
 
 .cart-item {
-  border: 0.3em black solid;
+  border: gray dashed 0.1em;
   padding: 0.5em;
   margin: 1em;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+}
+
+.cart-item button {
+  width: 40%;
+  margin: 0.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  transform: scale(1.1);
+}
+
+.minb {
+  background-color: rgb(240, 76, 76);
+}
+
+.addb {
+  background-color: rgb(144, 225, 144);
+}
+
+.empty-cart {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 2rem 1rem;
+  font-size: 1.1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  border: 2px dashed #ccc;
+  margin: 1rem 0;
+}
+
+.c-head {
+  font-size: 1.5rem;
+  color: #2d5a27;
+  margin-bottom: 1rem;
+  text-align: center;
 }

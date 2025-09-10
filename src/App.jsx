@@ -41,8 +41,15 @@ export default function App() {
 
   return (
     <div className="page">
-      <Plants plants={PLANTS} addCart={addCart} />
-      <CartTotal items={cart} addCart={addCart} removeCart={removeCart} />
+      <header className="header">
+        <h1>Welcome to the Plant Shop!</h1>
+      </header>
+      <main className="plants-section">
+        <Plants plants={PLANTS} addCart={addCart} />
+      </main>
+      <aside className="cart-section">
+        <CartTotal items={cart} addCart={addCart} removeCart={removeCart} />
+      </aside>
     </div>
   );
 }
